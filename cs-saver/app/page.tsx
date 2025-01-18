@@ -3,6 +3,8 @@ import AnalysisSection from '../components/AnalysisSection'
 import GetAnalysisSection from '../components/GetAnalysisSection'
 
 export default function Home() {
+
+  
   return (
     <main className="min-h-screen">
       <Header />
