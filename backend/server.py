@@ -28,6 +28,7 @@ def CurrentData():
 def Analysis():
     data=request.json
     event=data["event"]
+    title = ... 
     temp=[]
     humidity=[]
     date=[]
@@ -35,7 +36,6 @@ def Analysis():
 
     with open("data.txt","r") as file:
         for line in file:
-            print("READING LINE: " + line)
             parts=line.strip().split(" ")
             temp.append(parts[0])
             humidity.append(parts[1])
@@ -47,7 +47,6 @@ def Analysis():
             new_session["time"]=time
             new_session["humidity"]=humidity
             new_session["temperature"]=temp
-
     
     with open("sessions.json","r") as file:
         json_data=json.load(file)
