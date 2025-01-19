@@ -46,6 +46,7 @@ def CurrentData():
 
     return jsonify({"temperature": temp, "humidity": humidity, "date": date})
 
+<<<<<<< HEAD
 
 @app.route("/get_sessions", methods=["POST"])
 @cross_origin()
@@ -71,6 +72,19 @@ def Form():
     event_title=data["event_title"]
     event_description=data["event_description"]
 >>>>>>> ea89540 (analysis function frontend)
+=======
+<<<<<<< HEAD
+@app.route('/submit_form', methods=['POST'])
+def Form():
+=======
+@app.route('/analysis', methods=['POST'])
+@cross_origin() 
+def Analysis():
+>>>>>>> d1011bac25720a003482b2eb7dce93e1415a58b0
+    data=request.json
+    event_title=data["event_title"]
+    event_description=data["event_description"]
+>>>>>>> 8190ec75f4995edac30c442ab2f1dae76eae1d96
     temp=[]
     humidity=[]
     date=[]
@@ -85,12 +99,17 @@ def Form():
             time.append(parts[3])
             new_session={}
 <<<<<<< HEAD
+<<<<<<< HEAD
             new_session["title"]=event_title
             new_session["event"]=event_description
 =======
             new_session["event_title"]=event_title
             new_session["event_description"]=event_description
 >>>>>>> ea89540 (analysis function frontend)
+=======
+            new_session["event_title"]=event_title
+            new_session["event_description"]=event_description
+>>>>>>> 8190ec75f4995edac30c442ab2f1dae76eae1d96
             new_session["date"]=date
             new_session["time"]=time
             new_session["humidity"]=humidity
