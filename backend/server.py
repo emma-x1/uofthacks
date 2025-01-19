@@ -54,6 +54,7 @@ def GetSessions():
         json_data = json.load(file)
         return json_data
 
+<<<<<<< HEAD
 @app.route('/analysis', methods=['POST'])
 @cross_origin() 
 def Analysis():
@@ -63,6 +64,13 @@ def Analysis():
     event_description=data["event_description"]
     event_title=data["event_title"]
     event_description=data["event_description"]
+=======
+@app.route('/submit_form', methods=['POST'])
+def Form():
+    data=request.json
+    event_title=data["event_title"]
+    event_description=data["event_description"]
+>>>>>>> ea89540 (analysis function frontend)
     temp=[]
     humidity=[]
     date=[]
@@ -76,8 +84,13 @@ def Analysis():
             date.append(parts[2])
             time.append(parts[3])
             new_session={}
+<<<<<<< HEAD
             new_session["title"]=event_title
             new_session["event"]=event_description
+=======
+            new_session["event_title"]=event_title
+            new_session["event_description"]=event_description
+>>>>>>> ea89540 (analysis function frontend)
             new_session["date"]=date
             new_session["time"]=time
             new_session["humidity"]=humidity
