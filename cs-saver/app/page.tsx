@@ -4,7 +4,8 @@ import GetAnalysisSection from '../components/GetAnalysisSection'
 
 export default function Home() {
 
-  
+  //make fetch request to startSession
+
   return (
     <main className="min-h-screen">
       <Header />
