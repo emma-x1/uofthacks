@@ -1,0 +1,140 @@
+[33mcommit c0f4fd2312c6dec9c3b0383c7824e05d4d2915d7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: c6917fa 8190ec7
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sun Jan 19 05:33:27 2025 -0500
+
+    Merge branch 'main' of https://github.com/emma-x1/uofthacks
+
+[33mcommit c6917fad5ff16eb7d4254108538deeae6dd92dbe[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sun Jan 19 05:30:27 2025 -0500
+
+    please dont explode
+
+[33mcommit 23c4a1145faaa7f97611b972ef91a409fe7f4683[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sun Jan 19 04:53:49 2025 -0500
+
+    added handling of graph
+
+[33mcommit d1011bac25720a003482b2eb7dce93e1415a58b0[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sun Jan 19 02:22:45 2025 -0500
+
+    what the freak
+
+[33mcommit 65c2153c052c758cb8657ebeb01bf520fff3f94a[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sun Jan 19 01:28:52 2025 -0500
+
+    Fixed goofy cors error
+
+[33mcommit 8190ec75f4995edac30c442ab2f1dae76eae1d96[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: bd2ef14 d1011ba
+Author: emma-x1 <139976818+emma-x1@users.noreply.github.com>
+Date:   Sat Jan 18 21:26:34 2025 -0500
+
+    Merge branch 'main' of https://github.com/emma-x1/uofthacks
+
+[33mcommit bd2ef149910417aba7c684897efeb534a7c4cfc5[m
+Author: emma-x1 <139976818+emma-x1@users.noreply.github.com>
+Date:   Sat Jan 18 21:25:06 2025 -0500
+
+    update merge
+
+[33mcommit ea8954063e0fac93e72613278877271de5ca2e3c[m
+Author: emma-x1 <139976818+emma-x1@users.noreply.github.com>
+Date:   Sat Jan 18 21:23:25 2025 -0500
+
+    analysis function frontend
+
+[33mcommit 473ecd2e3f2aec9eb9b42be006d9c2e265905af5[m
+Author: emma-x1 <139976818+emma-x1@users.noreply.github.com>
+Date:   Sat Jan 18 19:24:46 2025 -0500
+
+    Fixed the button
+
+[33mcommit 3d17e6a8b353d534c609661afe6ce86a743d5e15[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sat Jan 18 23:29:11 2025 -0500
+
+    latest
+
+[33mcommit 005f7388c47c4aeeb21f0ec405c01c4f5e69a0e9[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sat Jan 18 22:53:49 2025 -0500
+
+    Fixed json parsing
+
+[33mcommit 033f39430872d330eb284f0ae598ca159edf49ca[m
+Merge: 7ef3459 0baca25
+Author: Tianxiao Lou <TianxiaoLou@outlook.com>
+Date:   Sat Jan 18 17:03:03 2025 -0500
+
+    Merge branch 'main' of https://github.com/emma-x1/uofthacks
+
+[33mcommit 7ef34596e258e98c138358258124c4b7ee7e1909[m
+Author: Tianxiao Lou <TianxiaoLou@outlook.com>
+Date:   Sat Jan 18 17:02:44 2025 -0500
+
+    api updated
+
+[33mcommit 0baca255c2b044e9d06c6be5c3f14345e8b5e7f2[m
+Author: emma-x1 <139976818+emma-x1@users.noreply.github.com>
+Date:   Sat Jan 18 16:42:34 2025 -0500
+
+    backend files
+
+[33mcommit fe6c293098b8796ea3f125ab8eb40fb3c90818bd[m
+Author: Tianxiao Lou <TianxiaoLou@outlook.com>
+Date:   Sat Jan 18 16:37:55 2025 -0500
+
+    server changed
+
+[33mcommit 324dda11820e71dae2811ca9cbcf4442c864103a[m
+Author: Tianxiao Lou <TianxiaoLou@outlook.com>
+Date:   Sat Jan 18 16:37:04 2025 -0500
+
+    server change
+
+[33mcommit e77431bf6522f668b6daecba4d44d98296adcc12[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sat Jan 18 21:27:35 2025 -0500
+
+    changed request added json
+
+[33mcommit 471f5055fa5540e256c0e997d8ecc050dab1ae03[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sat Jan 18 20:28:22 2025 -0500
+
+    Added flask server file
+
+[33mcommit 15f09e9887c2e83ebe37d96545c181043210af18[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sat Jan 18 20:24:17 2025 -0500
+
+    attempting fix
+
+[33mcommit 19c6c52a89c02469957d76823f6a36d8abc091c1[m
+Author: Tianxiao Lou <TianxiaoLou@outlook.com>
+Date:   Sat Jan 18 15:18:27 2025 -0500
+
+    add time data
+
+[33mcommit 935ec2e2fbb6533c8a41d3e7d5669c2ef8e9f120[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sat Jan 18 20:02:10 2025 -0500
+
+    Added arduino files
+
+[33mcommit b72f235c695afd0e9263aa1beba87ed268d2ef7e[m
+Author: hiatus770 <matiasrivas3106@gmail.com>
+Date:   Sat Jan 18 19:36:10 2025 -0500
+
+    Added arduino files
+
+[33mcommit bcf8e642ef564f142af4424788ecc0439ed63030[m
+Author: emma-x1 <139976818+emma-x1@users.noreply.github.com>
+Date:   Sat Jan 18 13:47:18 2025 -0500
+
+    frontend

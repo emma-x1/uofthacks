@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import ReactMarkdown from 'react-markdown' 
 
-const TYPING_SPEED = 30 // milliseconds per character
+const TYPING_SPEED = 0.1 // milliseconds per character
 
 export default function GetAnalysisSection() {
 
@@ -42,7 +43,7 @@ export default function GetAnalysisSection() {
       .then(data => {
         console.log('Success:', data)
         setAnalysis(data.gpt)
-        setDisplayedAnalysis('')
+        setDisplayedAnalysis('') 
         setIsTyping(true)
       })
       .catch((error) => {
@@ -66,7 +67,7 @@ export default function GetAnalysisSection() {
           </Button>
         ) : (
           <div className="relative">
-            <p className="text-gray-700 font-roboto min-h-[100px]">{displayedAnalysis}</p>
+            <p className="text-gray-700 font-roboto min-h-[100px]"><ReactMarkdown>{displayedAnalysis}</ReactMarkdown></p>
             {isTyping && (
               <span className="absolute bottom-0 right-0 animate-blink">|</span>
             )}

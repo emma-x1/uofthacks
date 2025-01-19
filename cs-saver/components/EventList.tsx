@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import React, { useEffect, useState } from "react"
 
 const events = [
   { date: '2023-05-01', entry: 'Felt unusually warm today.' },
@@ -8,6 +9,31 @@ const events = [
 ]
 
 export default function EventList() {
+
+  const [events, setEvents] = useState([])
+
+
+  useEffect(() => {
+  fetch ('http://localhost:5000/get_sessions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({}),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', JSON.stringify(data))
+      setEvents(data)
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+    }), 
+  [  ]
+  }) 
+  
+  
+
   return (
     <Card>
       <CardHeader>

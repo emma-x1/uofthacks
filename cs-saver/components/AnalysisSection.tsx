@@ -51,6 +51,7 @@ export default function AnalysisSection() {
   const [humidity, setHumidity] = useState([])
   const [selectedEvent, setSelectedEvent] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [events, setEvents] = useState([])
 
   // code that runs every 5 seconds to fetch new data
   useEffect(() => {
@@ -90,6 +91,28 @@ export default function AnalysisSection() {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    // Initial fetch of data
+    fetch('http://localhost:5000/get_sessions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', JSON.stringify(data))
+        setEvents(data.sessions)
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })}, [])
+
+  function handleEventClick(it : any) {
+    setSelectedEvent(it)
+    setIsModalOpen(true)
+  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -138,13 +161,13 @@ export default function AnalysisSection() {
         </CardHeader>
         <CardContent>
           <ul className="space-y-2 font-roboto">
-            {mockData.map((item, index) => (
+            {events.map((item, index) => (
               <li
                 key={index}
                 className="border-b pb-2 cursor-pointer hover:bg-gray-100 p-2 rounded transition-colors"
                 onClick={() => handleEventClick(item)}
               >
-                <span className="font-semibold">{item.date}:</span> {item.event}
+                <span className="font-semibold">{item.title}:</span> {item.event}
               </li>
             ))}
           </ul>
