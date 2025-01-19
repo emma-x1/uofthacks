@@ -24,11 +24,11 @@ def CurrentData():
 
     return jsonify({"temperature":temp, "humidity":humidity, "date":date})
 
-@app.route('/analysis', methods=['POST'])
-def Analysis():
+@app.route('/submit_form', methods=['POST'])
+def Form():
     data=request.json
-    event=data["event"]
-    title = ... 
+    event_title=data["event_title"]
+    event_description=data["event_description"]
     temp=[]
     humidity=[]
     date=[]
@@ -42,7 +42,8 @@ def Analysis():
             date.append(parts[2])
             time.append(parts[3])
             new_session={}
-            new_session["event"]=event
+            new_session["event_title"]=event_title
+            new_session["event_description"]=event_description
             new_session["date"]=date
             new_session["time"]=time
             new_session["humidity"]=humidity
@@ -56,13 +57,11 @@ def Analysis():
         with open("sessions.json","w") as reopen:
             json.dump(json_data,reopen)
             reopen.close() 
-        
 
+    return jsonify({"Entry submitted"})
 
+@app.route('/endSession', methods=['POST'])
 
-    # Make the openai request to actually make a recommendation based on the correct things 
-    
-    return data
 
 if __name__ == '__main__':
     app.run(debug=True)
