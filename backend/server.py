@@ -1,21 +1,29 @@
 from flask import Flask, request, jsonify
 import json
-
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+cors = CORS(app) # allow CORS for all domains on all routes.
 
 @app.route('/startSession', methods=['POST'])
+@cross_origin()
 def StartSession():
     with open("data.txt","w") as file:
         pass
     return jsonify({"message":"Session started"})
     
-@app.route('/current_data', methods=['POST'])
+@app.route('/current_data', methods=['GET'])
+@cross_origin() 
 def CurrentData():
     # read the current data from the file 
     temp=[]
     humidity=[]
     date=[]
     with open("data.txt","r") as file:
+        first_date = file.readline().strip().split(" ")[2]
+        # calculate the difference between the current date and the first date
+
         for line in file:
             parts=line.strip().split(" ")
             temp.append(parts[0])
@@ -24,8 +32,14 @@ def CurrentData():
 
     return jsonify({"temperature":temp, "humidity":humidity, "date":date})
 
+<<<<<<< HEAD
 @app.route('/submit_form', methods=['POST'])
 def Form():
+=======
+@app.route('/analysis', methods=['POST'])
+@cross_origin() 
+def Analysis():
+>>>>>>> d1011bac25720a003482b2eb7dce93e1415a58b0
     data=request.json
     event_title=data["event_title"]
     event_description=data["event_description"]
