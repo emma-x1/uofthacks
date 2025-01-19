@@ -27,9 +27,28 @@ export default function GetAnalysisSection() {
   }, [isTyping, displayedAnalysis, analysis])
 
   const handleGetAnalysis = () => {
-    setAnalysis(fullAnalysis)
-    setDisplayedAnalysis('')
-    setIsTyping(true)
+
+    fetch ('http://localhost:5000/analysis', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        event: 'temperature', 
+        title: 'some title'
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data)
+        setAnalysis(data.gpt)
+        setDisplayedAnalysis('')
+        setIsTyping(true)
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
+
   }
 
   return (
