@@ -1,0 +1,26 @@
+{
+    "sessions": [
+         {
+            "event": "sleeping!",
+            "date": "2021-01-01",
+            "time": "10:59",
+            "humidity": [
+                10, 20, 10
+            ],
+            "temperature": [
+                20, 30, 10
+            ]
+        },
+        {
+            "event": "interview",
+            "date": "2021-01-01",
+            "time": "10:00",
+            "humidity": [
+                10, 20, 30
+            ],
+            "temperature": [
+                20, 30, 40
+            ]
+        }
+    ] 
+}
