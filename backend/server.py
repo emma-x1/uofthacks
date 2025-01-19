@@ -1,9 +1,13 @@
 from flask import Flask, request, jsonify
 import json
-
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+cors = CORS(app) # allow CORS for all domains on all routes.
 
 @app.route('/startSession', methods=['POST'])
+@cross_origin()
 def StartSession():
     with open("data.txt","w") as file:
         pass

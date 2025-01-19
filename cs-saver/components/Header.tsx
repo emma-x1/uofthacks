@@ -15,7 +15,7 @@ export default function Header() {
     e.preventDefault()
     console.log('hi')
     // make fetch request to startSession
-    fetch('/api/startSession', {
+    fetch('http://localhost:5000/startSession', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
