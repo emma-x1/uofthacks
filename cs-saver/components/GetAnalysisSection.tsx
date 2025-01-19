@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 const TYPING_SPEED = 30 // milliseconds per character
 
 export default function GetAnalysisSection() {
+
+  
   const [analysis, setAnalysis] = useState('')
   const [displayedAnalysis, setDisplayedAnalysis] = useState('')
   const [isTyping, setIsTyping] = useState(false)

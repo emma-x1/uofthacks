@@ -13,13 +13,17 @@ def StartSession():
         pass
     return jsonify({"message":"Session started"})
     
-@app.route('/current_data', methods=['POST'])
+@app.route('/current_data', methods=['GET'])
+@cross_origin() 
 def CurrentData():
     # read the current data from the file 
     temp=[]
     humidity=[]
     date=[]
     with open("data.txt","r") as file:
+        first_date = file.readline().strip().split(" ")[2]
+        # calculate the difference between the current date and the first date
+
         for line in file:
             parts=line.strip().split(" ")
             temp.append(parts[0])
@@ -29,6 +33,7 @@ def CurrentData():
     return jsonify({"temperature":temp, "humidity":humidity, "date":date})
 
 @app.route('/analysis', methods=['POST'])
+@cross_origin() 
 def Analysis():
     data=request.json
     event=data["event"]
