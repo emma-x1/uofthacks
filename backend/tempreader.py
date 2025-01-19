@@ -8,7 +8,9 @@ arduino = serial.Serial(port='COM6', baudrate=9600)
 
 def readTemp():
     data = arduino.readline()
-    temp, hum = (data.decode()).split(' ')
+    print(data)
+    temp= data.decode().split(" ")[0]
+    hum = data.decode().split(" ")[1]
     currentTime=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f'Temperature: {temp} Humidity: {hum}')
     with open ("data.txt","a") as file:

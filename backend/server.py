@@ -7,12 +7,22 @@ app = Flask(__name__)
 def StartSession():
     with open("data.txt","w") as file:
         pass
+    return jsonify({"message":"Session started"})
     
 @app.route('/current_data', methods=['POST'])
 def CurrentData():
-   
+    # read the current data from the file 
+    temp=[]
+    humidity=[]
+    date=[]
+    with open("data.txt","r") as file:
+        for line in file:
+            parts=line.strip().split(" ")
+            temp.append(parts[0])
+            humidity.append(parts[1])
+            date.append(parts[2] + " " + parts[3])
 
-
+    return jsonify({"temperature":temp, "humidity":humidity, "date":date})
 
 @app.route('/analysis', methods=['POST'])
 def Analysis():
@@ -25,6 +35,7 @@ def Analysis():
 
     with open("data.txt","r") as file:
         for line in file:
+            print("READING LINE: " + line)
             parts=line.strip().split(" ")
             temp.append(parts[0])
             humidity.append(parts[1])
@@ -38,9 +49,20 @@ def Analysis():
             new_session["temperature"]=temp
 
     
-    with open("session.json","r") as file:
+    with open("sessions.json","r") as file:
         json_data=json.load(file)
         json_data["sessions"].append(new_session)
+        # write the new data back to the file
+        file.close() 
+        with open("sessions.json","w") as reopen:
+            json.dump(json_data,reopen)
+            reopen.close() 
+        
+
+
+
+    # Make the openai request to actually make a recommendation based on the correct things 
+    
     return data
 
 if __name__ == '__main__':
