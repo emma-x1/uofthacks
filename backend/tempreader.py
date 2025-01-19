@@ -12,7 +12,7 @@ def readTemp():
     currentTime=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f'Temperature: {temp} Humidity: {hum}')
     with open ("data.txt","a") as file:
-        file.write(f"{temp} {hum.strip()} {currentTime}")
+        file.write(f"{temp} {hum.strip()} {currentTime}\n")
 
 while True:
     readTemp()
